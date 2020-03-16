@@ -5,9 +5,7 @@ const Sushi = (props) => {
     <div className="sushi">
       <div className="plate" 
            onClick={() => props.handleClick(props.sushi)}>
-        { 
-          /* Tell me if this sushi has been eaten! */ 
-          false ?
+        { props.sushiState.sushiOrdered.includes(props.sushi) ?
             null
           :
             <img src={props.sushi.img_url} width="100%" />

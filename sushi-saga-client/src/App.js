@@ -27,14 +27,13 @@ class App extends Component {
     this.setState( prevState => {
       return ( { sushiOrdered: [sushi, ...prevState.sushiOrdered]} )
     })
-    console.log(this.state.sushiOrdered)
   }
 
   render() {
     return (
       <div className="app">
-        <SushiContainer sushiList={this.state.sushiList} buySushi={this.buySushi}/>
-        <Table sushiList={this.state.sushiList}/>
+        <SushiContainer sushiState={this.state} buySushi={this.buySushi}/>
+        <Table sushiOrdered={this.state.sushiOrdered} funds={this.state.funds}/>
       </div>
     );
   }
