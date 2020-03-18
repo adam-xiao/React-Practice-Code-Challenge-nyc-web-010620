@@ -24,14 +24,14 @@ class App extends Component {
   }
 
   buySushi =(sushi)=>{
-    if (this.state.funds >= sushi.price){
+    if (this.state.funds >= sushi.price && !(this.state.sushiOrdered.includes(sushi))){
       this.setState( prevState => {
         return ( { 
           sushiOrdered: [sushi, ...prevState.sushiOrdered],
           funds: (prevState.funds - sushi.price)
         } )
       })
-    }else{
+    }else if (this.state.funds < sushi.price){
       alert("YOU BROKE BOI")
     }
   }

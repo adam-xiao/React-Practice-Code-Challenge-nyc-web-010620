@@ -1,7 +1,7 @@
 import React from 'react'
 
 const MoreButton = (props) => {
-    return <button onClick={ ()=>{props.addInc(props.inc+1)} }>
+    return <button onClick={ props.scrollSushi }>
             More sushi!
           </button>
 }
